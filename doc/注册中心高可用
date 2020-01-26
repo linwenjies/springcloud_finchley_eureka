@@ -1,0 +1,7 @@
+以两个节点为例（master与slaveone）：
+	将master注册到slaveone上面
+	将slaveone注册到master上面
+三台节点为例（master与slaveone与slavetwo）：
+	将master注册到slaveone与slavetwo上面
+	将slaveone注册到master与slavetwo上面
+	将slavetwo注册到master与slaveone上面

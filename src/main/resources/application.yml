@@ -1,13 +1,22 @@
 server:
-  port: 2222
+  port: 8001
 
 spring:
   application:
-    name: eureka-client-1
+    name: eureka-server-1
+  security:
+    user:
+      name: lwj
+      password: lwj
 
 eureka:
+  server:
+    enable-self-preservation: false #关闭自我保护
+    eviction-interval-timer-in-ms: 5000 #清理间隔，默认60000毫秒
   instance:
-    hostname: client.cloud.com
+    hostname: localhost
   client:
+    register-with-eureka: false #注册中心不需要去检索服务，职责时维护服务实例
+    fetch-register: false
     serviceUrl:
-      defaultZone: http://master.cloud.com:1111/eureka,http://backup.cloud.com:1112/eureka
+      defaultZone: http://lwj:lwj@127.0.0.1:8002/eureka/,http://lwj:lwj@127.0.0.1:8003/eureka/
