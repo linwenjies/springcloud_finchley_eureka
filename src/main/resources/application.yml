@@ -1,0 +1,13 @@
+server:
+  port: 2222
+
+spring:
+  application:
+    name: eureka-client-1
+
+eureka:
+  instance:
+    hostname: client.cloud.com
+  client:
+    serviceUrl:
+      defaultZone: http://master.cloud.com:1111/eureka,http://backup.cloud.com:1112/eureka
